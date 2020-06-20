@@ -8,7 +8,7 @@ var form = d3.select("#datetime");
 
 // Create event handlers 
 button.on("click", runEnter);
-form.on("submit",runEnter);
+//form.on("submit",runEnter);
 
 
 
@@ -23,94 +23,20 @@ function runEnter() {
     // Get the value property of the input element
     var inputValue = inputElement.property("value");
   
-    console.log(inputValue);
-    console.log(tableData);
+    //console.log(inputValue);
+    //console.log(tableData);
 
     var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
 
-    console.log(filteredData);
+    //console.log(filteredData);
+    var tbody = d3.select("tbody");
 
-    // Object.values(filteredData).forEach(([key, value]) => {
-    //     console.log("Key:", key);
-    // });
-
-    filteredData.forEach((recipe) => {
-
-        // Iterate through each key and value
-        Object.entries(recipe).forEach(([key, value]) => {
-      
-            console.log("Key:", key);
-            console.log("Value:", value);
-        //   if (key === "dish") {
-        //     dishes.push(value);
-        //   }
-        //   else {
-        //     spices.push(value);
-        //   }
-         });
-      });
-      var tbody = d3.select("tbody");
-
-// Console.log the weather data from data.js
-      filteredData.forEach((weatherReport) => {
-      var row = tbody.append("tr");
-      Object.entries(weatherReport).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-      });
-      });
+    filteredData.forEach((parameter) => {
+    var row = tbody.append("tr");
+    Object.entries(parameter).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+    });
+    });
 }
 
-
-// Iterate through each recipe object
-// tableData.forEach((recipe) => {
-  
-//   // Iterate through each key and value
-//   Object.entries(recipe).forEach(([key, value]) => {
-    
-//     // Use the key to determine which array to push the value to
-    
-// });
-// });
-// function madeCut(player) {
-//     return player.madeTeam == true;
-//     // A more concise way to express a boolean conditional
-//     return player.madeTeam;
-//   }
-  
-//   // Call the custom function with filter()
-//   var playersOnTeam = roster.filter(madeCut);
-  
-//   // Display the results
-//   console.log(playersOnTeam)
-  
-// // BONUS - Use map to build both arrays of dish and spice values
-// // var dishesMapped = recipes.map(recipe => recipe.dish);
-// // var spicesMapped = recipes.map(recipe => recipe.spice);
-
-// console.log(tableData[0]);
-
-// if (key === "datetime") {
-//     date_time.push(value);
-//   }
-//   else if (key === "city"){
-//     city.push(value);
-//   }
-//   else if (key === "state"){
-//       state.push(value);
-//   }
-//   else if (key === "country"){
-//       country.push(value);
-//     }
-//   else if (key === "shape"){
-//       shape.push(value);
-//   }
-//   else if (key === "durationMinutes"){
-//       duration.push(value);
-//   }
-//   else if (key === "comments"){
-//       comment.push(value);
-//   }
-//  // console.log(date_time);
-//   //console.log(comment);
-//  });
