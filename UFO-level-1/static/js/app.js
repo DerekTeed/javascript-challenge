@@ -30,48 +30,48 @@ function runEnter() {
 
     console.log(filteredData);
 
-    Object.values(filteredData).forEach(([key, value]) => {
-        console.log("Key:", key);
-    });
+    // Object.values(filteredData).forEach(([key, value]) => {
+    //     console.log("Key:", key);
+    // });
 
+    filteredData.forEach((recipe) => {
 
-    // // First, create an array with just the age values
-    // var ages = filteredData.map(tableData => tableData.age);
-   
-    // var date_time = filteredData;
-    
-    // var state = [];
-    // var country = [];
-    // var shape = [];
-    // var duration = [];
-    // var comment = [];
+        // Iterate through each key and value
+        Object.entries(recipe).forEach(([key, value]) => {
+      
+            console.log("Key:", key);
+            console.log("Value:", value);
+        //   if (key === "dish") {
+        //     dishes.push(value);
+        //   }
+        //   else {
+        //     spices.push(value);
+        //   }
+         });
+      });
+      var tbody = d3.select("tbody");
 
-    // var list = d3.select(".table-head");
-
-    // // remove any children from the list to
-    // list.html("");
-  
-    // // append stats to the list
-    // list.append("li").text(`Mean: ${filteredData}`);
-    // list.append("li").text(`Median: ${median}`);
-    // list.append("li").text(`Mode: ${mode}`);
-    // list.append("li").text(`Variance: ${variance}`);
-    // list.append("li").text(`Standard Deviation: ${standardDeviation}`);
-
-    //console.log(city)
+// Console.log the weather data from data.js
+      filteredData.forEach((weatherReport) => {
+      var row = tbody.append("tr");
+      Object.entries(weatherReport).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+      });
+      });
 }
 
 
 // Iterate through each recipe object
-tableData.forEach((recipe) => {
+// tableData.forEach((recipe) => {
   
-  // Iterate through each key and value
-  Object.entries(recipe).forEach(([key, value]) => {
+//   // Iterate through each key and value
+//   Object.entries(recipe).forEach(([key, value]) => {
     
-    // Use the key to determine which array to push the value to
+//     // Use the key to determine which array to push the value to
     
-});
-});
+// });
+// });
 // function madeCut(player) {
 //     return player.madeTeam == true;
 //     // A more concise way to express a boolean conditional
